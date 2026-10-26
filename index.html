@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Daily Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div>
+                <p class="eyebrow">DAILY PRODUCTIVITY</p>
+                <h1>Smart Daily Planner</h1>
+                <p class="subtitle">
+                    Atur kegiatanmu, selesaikan harimu dengan lebih baik.
+                </p>
+            </div>
+            <div class="date-box">
+                <span id="today-date"></span>
+                <strong>Hari ini</strong>
+            </div>
+        </header>
+
+        <section class="summary">
+            <div class="summary-card">
+                <span>Total Tugas</span>
+                <strong id="total-tasks">0</strong>
+            </div>
+            <div class="summary-card">
+                <span>Belum Selesai</span>
+                <strong id="pending-tasks">0</strong>
+            </div>
+            <div class="summary-card">
+                <span>Selesai</span>
+                <strong id="completed-tasks">0</strong>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Tambah Kegiatan</h2>
+            <p class="section-description">
+                Catat kegiatan agar tidak ada yang terlewat.
+            </p>
+
+            <form id="task-form">
+                <div class="form-group">
+                    <label for="task-name">Nama kegiatan</label>
+                    <input
+                        type="text"
+                        id="task-name"
+                        placeholder="Contoh: Mengerjakan tugas kuliah"
+                        maxlength="100"
+                        required
+                    >
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="task-date">Tanggal kegiatan</label>
+                        <input type="date" id="task-date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="task-priority">Prioritas</label>
+                        <select id="task-priority" required>
+                            <option value="Rendah">Rendah</option>
+                            <option value="Sedang" selected>Sedang</option>
+                            <option value="Tinggi">Tinggi</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="add-button">
+                    + Tambahkan Kegiatan
+                </button>
+            </form>
+        </section>
+
+        <section class="panel task-panel">
+            <div class="task-heading">
+                <div>
+                    <h2>Daftar Kegiatan</h2>
+                    <p class="section-description">
+                        Pantau dan selesaikan tugasmu.
+                    </p>
+                </div>
+
+                <select id="task-filter" aria-label="Filter tugas">
+                    <option value="Semua">Semua tugas</option>
+                    <option value="Belum">Belum selesai</option>
+                    <option value="Selesai">Selesai</option>
+                </select>
+            </div>
+
+            <div class="progress-section">
+                <div class="progress-info">
+                    <span>Progres penyelesaian</span>
+                    <strong id="progress-text">0%</strong>
+                </div>
+                <div class="progress-track">
+                    <div id="progress-bar"></div>
+                </div>
+            </div>
+
+            <div id="task-list"></div>
+        </section>
+
+        <footer>
+            <p>Smart Daily Planner &copy; 2026</p>
+            <p>Mulai dari satu tugas, selesaikan satu per satu.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
